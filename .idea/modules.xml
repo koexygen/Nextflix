@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/full-stack-project.iml" filepath="$PROJECT_DIR$/.idea/full-stack-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Nextflix.iml" filepath="$PROJECT_DIR$/.idea/Nextflix.iml" />
     </modules>
   </component>
 </project>

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Rails full-stack-project: development" uuid="4ef8aae0-65fd-4536-aed1-8755a6595996">
+    <data-source source="LOCAL" name="Rails Nextflix: production" uuid="8c3223cd-84f4-4c82-846c-bc15edd5102c">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/full-stack-project_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/nextflix_production</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Rails full-stack-project: production" uuid="7ee8f71c-ed01-482b-a909-d2eb082b8ab7">
+    <data-source source="LOCAL" name="Rails Nextflix: development" uuid="6a63db10-9984-45d5-a4d8-dedf03c05cb3">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/full-stack-project_production</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/nextflix_development</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Rails full-stack-project: test" uuid="d75fd73a-8721-4174-889b-386f01120f0c">
+    <data-source source="LOCAL" name="Rails Nextflix: test" uuid="f21f8de8-7430-491c-bad8-77a91b0ecb4a">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/full-stack-project_test</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/nextflix_test</jdbc-url>
     </data-source>
   </component>
 </project>
