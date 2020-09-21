@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: %i[create show]
-    resource :sessions, only: %i[create destroy]
+    resource :session, only: %i[create destroy]
   end
 
   root to: 'root#root'
