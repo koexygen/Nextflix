@@ -3,7 +3,7 @@ import {
   RECEIVE_SESSION_ERRORS,
 } from "../actions/session_action";
 
-const sessionErrorsReducer = (state, action) => {
+const sessionErrorsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
