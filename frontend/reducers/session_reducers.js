@@ -4,7 +4,7 @@ import {
   LOGOUT_USER,
 } from "../actions/session_action";
 
-export const sessionReducer = (state = {}, action) => {
+const sessionReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
