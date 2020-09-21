@@ -1,7 +1,7 @@
 import React from "react";
 
 const App = (props) => {
-  return <h1>hi from app.jsx</h1>;
+  return <h1>{console.log(props)}</h1>;
 };
 
 export default App;
