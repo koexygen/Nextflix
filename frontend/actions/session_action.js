@@ -21,7 +21,7 @@ export const loginUser = (user) => (dispatch) => {
     (respUser) => {
       return dispatch(receiveCurrentUser(respUser));
     },
-    (error) => dispatch(receiveSessionError(error))
+    (error) => dispatch(receiveSessionError(error.responseJSON))
   );
 };
 
@@ -30,7 +30,7 @@ export const signupUser = (user) => (dispatch) => {
     (respUser) => {
       return dispatch(receiveCurrentUser(respUser));
     },
-    (error) => dispatch(receiveSessionError(error))
+    (error) => dispatch(receiveSessionError(error.responseJSON))
   );
 };
 
@@ -39,6 +39,6 @@ export const logoutUser = () => (dispatch) => {
     () => {
       return dispatch(logoutCurrentUser());
     },
-    (error) => dispatch(receiveSessionError(error))
+    (error) => dispatch(receiveSessionError(error.responseJSON))
   );
 };
