@@ -1,1 +1,1 @@
-json.extract! @user, :username, :email, :image_url
+json.partial! 'api/users/user', user: @user
