@@ -1,7 +1,8 @@
 import React from "react";
+import GreetingsContainer from "./header/GreetingsContainer";
 
-const App = (props) => {
-  return <h1>{console.log(props)}</h1>;
+const App = () => {
+  return <GreetingsContainer />;
 };
 
 export default App;

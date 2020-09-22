@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
+    save
+    session_token
   end
 
   def ensure_session_token
