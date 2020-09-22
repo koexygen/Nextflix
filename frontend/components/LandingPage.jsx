@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderNav from "./header/Header-navContainer";
+import TryFree from "./LandingComponents/TryFree";
 
 export default class LandingPage extends React.Component {
   constructor(props) {
@@ -7,6 +8,11 @@ export default class LandingPage extends React.Component {
   }
 
   render() {
-    return <HeaderNav />;
+    return (
+      <div className="landing-container">
+        <HeaderNav />
+        <TryFree />
+      </div>
+    );
   }
 }
