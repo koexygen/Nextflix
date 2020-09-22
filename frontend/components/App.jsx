@@ -1,8 +1,8 @@
 import React from "react";
-import HeaderNavContainer from "./header/Header-navContainer";
+import LandingPage from "./LandingPage";
 
 const App = () => {
-  return <HeaderNavContainer />;
+  return <LandingPage />;
 };
 
 export default App;
