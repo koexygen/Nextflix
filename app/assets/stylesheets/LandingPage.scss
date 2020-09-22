@@ -21,6 +21,10 @@
     right: 0;
     background: linear-gradient(to top,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0.6) 100%),radial-gradient(50% 100%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,.7) 100%);
   }
+
+  img {
+    object-fit: cover;
+  }
 }
 
 .try-free-items {
