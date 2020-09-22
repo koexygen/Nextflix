@@ -7,12 +7,6 @@ export default class HeaderNav extends React.Component {
   }
   // debugger;
   render() {
-    return this.props.currentUser ? (
-      <div>
-        <h1>Welcome {this.props.currentUser.username}</h1>
-      </div>
-    ) : (
-      <SignInButton />
-    );
+    return null;
   }
 }

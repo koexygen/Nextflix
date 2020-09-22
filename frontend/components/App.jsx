@@ -1,8 +1,8 @@
 import React from "react";
-import GreetingsContainer from "./header/Header-navContainer";
+import HeaderNavContainer from "./header/Header-navContainer";
 
 const App = () => {
-  return <GreetingsContainer />;
+  return <HeaderNavContainer />;
 };
 
 export default App;
