@@ -1,8 +1,13 @@
 import React from "react";
-import HeaderNavContainer from "./header/Header-navContainer";
+import LandingPage from "./LandingPage";
+import { Route } from "react-router";
 
 const App = () => {
-  return <HeaderNavContainer />;
+  return (
+    <Route>
+      <LandingPage />;
+    </Route>
+  );
 };
 
 export default App;

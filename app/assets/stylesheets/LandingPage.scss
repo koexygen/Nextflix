@@ -1,0 +1,93 @@
+@import "SignInButton";
+
+.landing-container {
+  color: white;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  position: relative;
+}
+
+.try-free-cover {
+  position: absolute;
+  top: 0;
+  border-bottom: 8px solid #222;
+
+  .cover-blur-hover {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0.6) 100%),radial-gradient(50% 100%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,.7) 100%);
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.try-free-items {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1;
+  margin: 10% 0;
+
+  * {
+    margin: 0.2rem auto;
+  }
+
+  h1 {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  h2 {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 10px;
+  }
+
+  form > h4{
+    font-size: 1.1rem;
+    padding-bottom: 20px;
+  }
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+}
+
+.landing-form {
+  min-width: 450px;
+
+  input {
+    min-width: 480px;
+    min-height: 60px;
+  }
+
+  input::placeholder {
+    padding: 10px;
+  }
+
+  button {
+    min-height: 66px;
+    background-color: $button-background-color;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none;
+    border-left: 1px solid #333;
+    color: white;
+    padding: 0 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

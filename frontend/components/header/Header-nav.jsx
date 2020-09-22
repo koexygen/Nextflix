@@ -1,5 +1,6 @@
 import React from "react";
 import SignInButton from "../buttons/SignInButton";
+import { Link } from "react-router-dom";
 
 export default class HeaderNav extends React.Component {
   constructor(props) {
@@ -7,6 +8,18 @@ export default class HeaderNav extends React.Component {
   }
   // debugger;
   render() {
-    return null;
+    return (
+      <nav className="navbar-header">
+        <img
+          src={window.nextflixLogoUrl}
+          alt="nextflix-logo"
+          className="nextflix-logo"
+        />
+
+        <Link to="/login">
+          <SignInButton />
+        </Link>
+      </nav>
+    );
   }
 }
