@@ -7,6 +7,16 @@ export default class HeaderNav extends React.Component {
   }
   // debugger;
   render() {
-    return null;
+    return (
+      <nav className="navbar-header">
+        <img
+          src={window.nextflixLogoUrl}
+          alt="nextflix-logo"
+          className="nextflix-logo"
+        />
+
+        <SignInButton />
+      </nav>
+    );
   }
 }
