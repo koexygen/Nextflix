@@ -1,4 +1,4 @@
-import Greetings from "./Greetings";
+import HeaderNav from "./Header-nav";
 import { logoutUser } from "../../actions/session_action";
 import { connect } from "react-redux";
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greetings);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderNav);
