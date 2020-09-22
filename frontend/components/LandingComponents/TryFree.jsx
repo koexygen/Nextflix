@@ -12,8 +12,11 @@ const TryFree = (props) => {
             Ready to watch? Enter your email to create or restart your
             membership.
           </h4>
+
           <input type="text" name="" placeholder="Email address" />
-          <button type="submit">Get Started</button>
+          <button type="submit">
+            Get Started <span> > </span>
+          </button>
         </form>
       </div>
       <div className="try-free-cover">
