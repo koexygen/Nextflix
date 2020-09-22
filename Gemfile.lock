@@ -172,6 +172,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    scss_lint (0.59.0)
+      sass (~> 3.5, >= 3.5.5)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -228,6 +230,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.4)
   sass-rails (~> 5.0)
+  scss_lint
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)

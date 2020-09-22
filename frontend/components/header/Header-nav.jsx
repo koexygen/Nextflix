@@ -1,4 +1,5 @@
 import React from "react";
+import SignInButton from "../buttons/SignInButton";
 
 export default class HeaderNav extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class HeaderNav extends React.Component {
         <h1>Welcome {this.props.currentUser.username}</h1>
       </div>
     ) : (
-      <h1>ur not logged in</h1>
+      <SignInButton />
     );
   }
 }
