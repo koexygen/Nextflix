@@ -1,7 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ContinueButton = (props) => (
-  <button className="continue-button">CONTINUE</button>
-);
-
-export default ContinueButton;
+export default class ContinueButton extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <Link to={this.props.goTo ? this.props.goTo : "#"}>
+        <button className="continue-button">CONTINUE</button>
+      </Link>
+    );
+  }
+}
