@@ -21,6 +21,9 @@ $error-color: #e87c03;
     .input-username {
       position: relative;
     }
+    .input-password {
+      position: relative;
+    }
 
     h1 {
       font-size: 2rem;
@@ -56,12 +59,6 @@ $error-color: #e87c03;
           font-size: 11px;
           padding: 20px;
         }
-      }
-    }
-
-    .input-password {
-      label {
-        bottom: 373px;
       }
     }
 

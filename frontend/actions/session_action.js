@@ -11,10 +11,12 @@ export const receiveCurrentUser = (user) => ({
 
 export const logoutCurrentUser = () => ({ type: LOGOUT_USER });
 
-export const receiveSessionError = (errors) => ({
-  type: RECEIVE_SESSION_ERRORS,
-  errors,
-});
+export const receiveSessionError = (errors) => {
+  return {
+    type: RECEIVE_SESSION_ERRORS,
+    errors,
+  };
+};
 
 export const loginUser = (user) => (dispatch) => {
   return AuthUtil.login(user).then(
