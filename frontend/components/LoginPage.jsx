@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderNav from "./header/Header-navContainer";
+import LoginFormContainer from "./forms/LoginFormContainer";
 
 export default class LandingPage extends React.Component {
   constructor(props) {
@@ -10,19 +11,7 @@ export default class LandingPage extends React.Component {
     return (
       <div>
         <HeaderNav />
-        <div className="form-container">
-          <form className="login-form">
-            <h1>Sign In</h1>
-
-            <div className="input-username">
-              <input type="text" name="a" id="username" required />
-              <label htmlFor="username">Email or phone number</label>
-              <span className="form-error">
-                Please enter a valid email or phone number.
-              </span>
-            </div>
-          </form>
-        </div>
+        <LoginFormContainer />
         <div className="try-free-cover">
           <img
             src={window.coverWallPaperUrl}

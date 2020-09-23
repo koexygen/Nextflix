@@ -12,7 +12,7 @@ export default class HeaderNav extends React.Component {
       <nav className="navbar-header">
         <Link to="/">
           <img
-            src={window.nextflixLogoUrl}
+            src={window.netflixLogoUrl}
             alt="nextflix-logo"
             className="nextflix-logo"
           />

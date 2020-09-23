@@ -1,3 +1,5 @@
+@import "./SignInButton";
+
 $input-bg-color: #333;
 $input-focused-bg-color: #454545;
 $label-color: #8c8c8c;
@@ -57,11 +59,23 @@ $error-color: #e87c03;
       }
     }
 
+    .input-password {
+      label {
+        bottom: 373px;
+      }
+    }
+
     .form-error {
       color: #e87c03;
       margin-bottom: -6px;
       padding: 6px 3px;
       font-size: 0.8rem;
+    }
+
+    button {
+      float: none;
+      width: 111%;
+      height: 50px;
     }
   }
 }
