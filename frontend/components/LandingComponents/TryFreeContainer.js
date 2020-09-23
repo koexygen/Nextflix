@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import TryFree from "./TryFree";
 import { saveInputEmail } from "../../actions/session_action";
+import { withRouter } from "react-router-dom";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {};
 };
 
@@ -12,4 +13,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TryFree);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(TryFree)
+);

@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import SignUpPage from "./SignUpPage";
-import { receiveEmailFromInput } from "../actions/session_action";
 
 const mapStateToProps = (state, ownProps) => {
-  return null;
+  return {
+    savedEmail: state.session.inputEmail,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

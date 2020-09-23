@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router";
 
 export default class TryFree extends React.Component {
   constructor(props) {
@@ -12,8 +13,10 @@ export default class TryFree extends React.Component {
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.keepEmail(this.state.inputEmail);
+    this.props.history.push("/signup");
   }
 
   handleChangeEmail(e) {
@@ -36,7 +39,8 @@ export default class TryFree extends React.Component {
             </h4>
 
             <input
-              type="text"
+              type="email"
+              required
               name=""
               placeholder="Email address"
               value={this.state.inputEmail}
