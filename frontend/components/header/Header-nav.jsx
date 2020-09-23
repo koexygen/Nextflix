@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 export default class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
+
+    this.signOut = this.signOut.bind(this);
+  }
+
+  signOut() {
+    this.props.logout();
   }
   // debugger;
   render() {
@@ -18,9 +24,13 @@ export default class HeaderNav extends React.Component {
           />
         </Link>
 
-        <Link to="/login">
-          <SignInButton />
-        </Link>
+        {this.props.currentUser ? (
+          <button onClick={this.signOut}>Sign out</button>
+        ) : (
+          <Link to="/login">
+            <SignInButton />
+          </Link>
+        )}
       </nav>
     );
   }
