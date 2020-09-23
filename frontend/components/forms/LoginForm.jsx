@@ -37,10 +37,8 @@ export default class LoginForm extends React.Component {
               required
               onChange={this.handleChange("username")}
             />
-            <label htmlFor="username">Email or phone number</label>
-            <span className="form-error">
-              Please enter a valid email or phone number.
-            </span>
+            <label htmlFor="username">Enter Username</label>
+            <span className="form-error">{this.props.errors.session[0]}</span>
           </div>
           <div className="input-password">
             <input
@@ -50,8 +48,8 @@ export default class LoginForm extends React.Component {
               required
               onChange={this.handleChange("password")}
             />
-            <label htmlFor="password">Password</label>
-            <span className="form-error">Please Enter Valid Password.</span>
+            <label htmlFor="password">Enter Password</label>
+            <span className="form-error">{this.props.errors.session[0]}</span>
           </div>
           <SignInButton />
         </form>
