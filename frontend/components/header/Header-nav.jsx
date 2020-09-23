@@ -1,17 +1,13 @@
 import React from "react";
 import SignInButton from "../buttons/SignInButton";
+import HeaderProfileContainer from "./HeaderProfileContainer";
 import { Link } from "react-router-dom";
 
 export default class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
-
-    this.signOut = this.signOut.bind(this);
   }
 
-  signOut() {
-    this.props.logout();
-  }
   // debugger;
   render() {
     return (
@@ -25,7 +21,7 @@ export default class HeaderNav extends React.Component {
         </Link>
 
         {this.props.currentUser ? (
-          <button onClick={this.signOut}>Sign out</button>
+          <HeaderProfileContainer />
         ) : (
           <Link to="/login">
             <SignInButton />
