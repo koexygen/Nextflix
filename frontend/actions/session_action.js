@@ -3,11 +3,21 @@ import * as AuthUtil from "../util/auth_util";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const RECEIVE_INPUT_EMAIL = "RECEIVE_EMAIL";
 
 export const receiveCurrentUser = (user) => ({
   type: RECEIVE_CURRENT_USER,
   user,
 });
+
+export const receiveEmailFromInput = (email) => ({
+  type: RECEIVE_INPUT_EMAIL,
+  email,
+});
+
+export const saveInputEmail = (email) => (dispatch) => {
+  return dispatch(receiveEmailFromInput(email));
+};
 
 export const logoutCurrentUser = () => ({ type: LOGOUT_USER });
 
