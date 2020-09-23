@@ -3,7 +3,7 @@
 .landing-container {
   color: white;
   margin: 0 auto;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
 }
 
@@ -13,13 +13,17 @@
   border-bottom: 8px solid #222;
 
   .cover-blur-hover {
-    background: rgba(0,0,0,0.5);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0.6) 100%),radial-gradient(50% 100%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,.7) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      radial-gradient(50% 100%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
   }
 
   img {
@@ -55,7 +59,7 @@
     padding: 10px;
   }
 
-  form > h4{
+  form > h4 {
     font-size: 1.1rem;
     padding-bottom: 20px;
   }

@@ -1,0 +1,67 @@
+$input-bg-color: #333;
+$input-focused-bg-color: #454545;
+$label-color: #8c8c8c;
+$error-color: #e87c03;
+
+.form-container {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: 400px;
+  min-height: 600px;
+
+  .login-form {
+    color: white;
+    box-shadow: 0px 0px 3px 1px #000001;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 60px;
+
+    .input-username {
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    label {
+      position: absolute;
+      color: $label-color;
+      font-size: 1.1rem;
+      padding: 0 16px;
+      bottom: 37px;
+      transition: font-size 0.5s, padding 0.5s;
+    }
+
+    input {
+      background-color: $input-bg-color;
+      min-height: 50px;
+      width: 100%;
+      border-radius: 4px;
+      border: none;
+      color: white;
+      padding: 0 16px;
+      border-bottom: 2px solid $error-color;
+      margin-bottom: 3px;
+
+      &:focus,
+      &:valid {
+        background-color: $input-focused-bg-color;
+
+        + label {
+          color: $error-color;
+          font-size: 11px;
+          padding: 20px;
+        }
+      }
+    }
+
+    .form-error {
+      color: #e87c03;
+      margin-bottom: -6px;
+      padding: 6px 3px;
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -10,11 +10,13 @@ export default class HeaderNav extends React.Component {
   render() {
     return (
       <nav className="navbar-header">
-        <img
-          src={window.nextflixLogoUrl}
-          alt="nextflix-logo"
-          className="nextflix-logo"
-        />
+        <Link to="/">
+          <img
+            src={window.nextflixLogoUrl}
+            alt="nextflix-logo"
+            className="nextflix-logo"
+          />
+        </Link>
 
         <Link to="/login">
           <SignInButton />
