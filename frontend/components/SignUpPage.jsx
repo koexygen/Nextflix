@@ -1,4 +1,5 @@
 import React from "react";
+import SignUpHeader from "./header/SignUpHeader";
 import ContinueButton from "./buttons/ContinueButton";
 
 export default class SignUpPage extends React.Component {
@@ -9,12 +10,7 @@ export default class SignUpPage extends React.Component {
   render() {
     return (
       <div className="signup-page">
-        <nav className="signup-nav">
-          <img src={window.netflixLogoUrl} alt="netflix-logo" />
-
-          <span>Sign In</span>
-        </nav>
-
+        <SignUpHeader />
         <div className="signup-container">
           <div className="signup-content">
             <img src={window.devicesImgUrl} alt="a" />
