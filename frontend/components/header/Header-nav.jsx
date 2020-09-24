@@ -1,9 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import SignInButton from "../buttons/SignInButton";
 import HeaderProfileContainer from "./HeaderProfileContainer";
 import { Link } from "react-router-dom";
 
-export default class HeaderNav extends React.Component {
+class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -12,7 +13,7 @@ export default class HeaderNav extends React.Component {
   render() {
     return (
       <nav className="navbar-header">
-        <Link to="/">
+        <Link to={this.props.signedIn ? "/browse" : "/"}>
           <img
             src={window.netflixLogoUrl}
             alt="nextflix-logo"
@@ -31,3 +32,7 @@ export default class HeaderNav extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({ signedIn: Boolean(state.session.id) });
+
+export default connect(mapStateToProps)(HeaderNav);
