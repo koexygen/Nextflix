@@ -9,8 +9,10 @@ export default class BrowseBillboard extends React.Component {
     return (
       <div className="browse-billboard">
         <div className="billboard-wallpaper">
-          <div className="wallpaper-image"></div>
           <div className="billboard-hover"></div>
+          <div className="wallpaper-image">
+            <img src={window.billboardImgUrl} alt="" />
+          </div>
           <div className="billboard-play-logo">
             <img src={window.spartacusTitleImgUrl} alt="" />
 
@@ -19,8 +21,8 @@ export default class BrowseBillboard extends React.Component {
               born in blood. Lots and lots of blood.
             </h4>
 
-            <button>Play</button>
-            <button>More Info</button>
+            <button className="billboard-play">Play</button>
+            <button className="billboard-info">More Info</button>
           </div>
         </div>
       </div>
