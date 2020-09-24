@@ -12,7 +12,6 @@ export default class Browse extends React.Component {
       <div className="browse-page">
         <HeaderNavContainer />
         <BrowseBillboardContainer />
-        <h1>Hi from browse.jsx</h1>
       </div>
     );
   }
