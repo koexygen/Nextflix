@@ -36,7 +36,7 @@ export default class HeaderProfile extends React.Component {
           <span className="dropdown-arrow"></span>
         </div>
         <div className={`profile-dropdown ${this.state.hoverClass}`}>
-          <button onClick={this.signOut}>Sign Out</button>
+          <a onClick={this.signOut}>Sign Out</a>
         </div>
       </div>
     );

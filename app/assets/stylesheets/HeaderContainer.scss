@@ -1,11 +1,16 @@
 .navbar-header {
   position: relative;
-  margin: 0 55px;
+  padding: 0 55px;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.75) 5%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .nextflix-logo {
