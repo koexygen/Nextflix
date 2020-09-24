@@ -18,7 +18,7 @@ export default class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.loginUser(user);
+    this.props.loginUser(user).then(() => this.props.history.push("/browse"));
   }
 
   render() {

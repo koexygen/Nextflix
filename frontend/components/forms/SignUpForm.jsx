@@ -16,7 +16,9 @@ export default class SignUpForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.register(this.state).then(() => this.props.history.push("/"));
+    this.props
+      .register(this.state)
+      .then(() => this.props.history.push("/browse"));
   }
 
   render() {
