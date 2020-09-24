@@ -1,12 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
+import { loginUser } from "../../actions/session_action";
 import SignInButton from "../buttons/SignInButton";
 import HeaderProfileContainer from "./HeaderProfileContainer";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
+
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  demoLogin() {
+    this.props
+      .loginDemo({ username: "demo", password: "demodemo" })
+      .then(() => this.props.history.push("/browse"));
   }
 
   // debugger;
@@ -26,6 +35,12 @@ class HeaderNav extends React.Component {
         ) : (
           <Link to="/login">
             <SignInButton />
+            <button
+              className="signin-button demo-login"
+              onClick={this.demoLogin}
+            >
+              Demo Login
+            </button>
           </Link>
         )}
       </nav>
@@ -34,5 +49,10 @@ class HeaderNav extends React.Component {
 }
 
 const mapStateToProps = (state) => ({ signedIn: Boolean(state.session.id) });
+const mapDispatchToProps = (dispatch) => ({
+  loginDemo: (demo) => dispatch(loginUser(demo)),
+});
 
-export default connect(mapStateToProps)(HeaderNav);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(HeaderNav)
+);
