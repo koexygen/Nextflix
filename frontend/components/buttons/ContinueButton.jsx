@@ -8,7 +8,7 @@ export default class ContinueButton extends React.Component {
   render() {
     return (
       <Link to={this.props.goTo ? this.props.goTo : "#"}>
-        <button className="continue-button">CONTINUE</button>
+        <button className="continue-button">{this.props.text}</button>
       </Link>
     );
   }

@@ -25,7 +25,7 @@ export default class SignUpPage extends React.Component {
               Netflix on any device at any time.
             </p>
 
-            <ContinueButton goTo="/signup/form" />
+            <ContinueButton goTo="/signup/form" text="CONTINUE" />
           </div>
         </div>
       </div>
