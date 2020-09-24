@@ -1,12 +1,18 @@
 import React from "react";
+import { Route, Switch } from "react-router";
 import LandingPage from "./LandingPage";
-import { Route } from "react-router";
+import LoginPage from "./LoginPage";
+import SignUpPageContainer from "./SignUpPageContainer";
+import SignUpFormContainer from "./forms/SignUpFormContainer";
 
 const App = () => {
   return (
-    <Route>
-      <LandingPage />;
-    </Route>
+    <Switch>
+      <Route exact path="/" component={LandingPage} />;
+      <Route exact path="/login" component={LoginPage} />;
+      <Route exact path="/signup/form" component={SignUpFormContainer} />;
+      <Route exact path="/signup" component={SignUpPageContainer} />;
+    </Switch>
   );
 };
 
