@@ -1,6 +1,7 @@
 .browse-page {
   width: 100%;
   height: 100%;
+  background-color: #141414;
 }
 
 .browse-billboard {
@@ -14,13 +15,48 @@
     width: 100%;
     height: 100%;
 
+    .billboard-hover {
+      background: linear-gradient(
+        to bottom,
+        rgba(20, 20, 20, 0.2) 29%,
+        rgba(20, 20, 20, 0.25) 44%,
+        #141414 70%,
+        #14141400 100%
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
     .wallpaper-image {
       width: 100%;
-      background-image: url("https://image.tmdb.org/t/p/original/oihnoMVJHcdmUe0FbxWbwk1YbGZ.jpg");
-      height: 650px;
+      background-image: image_url("billboard.webp");
+      height: 70%;
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 10% 8%;
+      background-position: 10% 0;
+    }
+
+    .billboard-play-logo {
+      width: 35%;
+      height: 30%;
+      position: absolute;
+      top: 22%;
+      left: 4%;
+
+      img {
+        width: 90%;
+      }
+
+      h4 {
+        color: #fff;
+        width: 100%;
+        font-weight: 400;
+        line-height: normal;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+        margin-top: 10px;
+      }
     }
   }
 }

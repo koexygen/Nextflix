@@ -10,6 +10,18 @@ export default class BrowseBillboard extends React.Component {
       <div className="browse-billboard">
         <div className="billboard-wallpaper">
           <div className="wallpaper-image"></div>
+          <div className="billboard-hover"></div>
+          <div className="billboard-play-logo">
+            <img src={window.spartacusTitleImgUrl} alt="" />
+
+            <h4>
+              Even the most legendary warriors have a beginning. This one was
+              born in blood. Lots and lots of blood.
+            </h4>
+
+            <button>Play</button>
+            <button>More Info</button>
+          </div>
         </div>
       </div>
     );
