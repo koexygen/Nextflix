@@ -1,0 +1,26 @@
+.browse-page {
+  width: 100%;
+  height: 100%;
+}
+
+.browse-billboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .billboard-wallpaper {
+    width: 100%;
+    height: 100%;
+
+    .wallpaper-image {
+      width: 100%;
+      background-image: url("https://image.tmdb.org/t/p/original/oihnoMVJHcdmUe0FbxWbwk1YbGZ.jpg");
+      height: 650px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 10% 8%;
+    }
+  }
+}
