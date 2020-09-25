@@ -29,4 +29,6 @@ class User < ApplicationRecord
     @user = User.find_by(username: username)
     return @user if !@user.nil? && @user.password?(password)
   end
+
+  has_one_attached :avatar
 end
