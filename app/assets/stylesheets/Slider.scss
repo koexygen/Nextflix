@@ -8,25 +8,26 @@
   .container {
     display: flex;
     padding: 0 55px;
-
-    &:hover .slider-item {
-      transform: translateX(-20%);
-    }
   }
 
   .slider-item {
     background: green;
-    flex: 0 0 19.7%;
+    flex: 0 0 17%;
     text-align: center;
     margin: 0 2px;
     transition: transform 300ms ease 100ms;
+    height: 100px;
 
-    &:hover {
-      transform: scale(1.5) !important;
+    .slider-sub-item {
+      display: none;
     }
 
-    &:hover ~ .slider-item {
-      transform: translateX(25%);
+    &:hover {
+      transform: scale(2) !important;
+
+      .slider-sub-item {
+        display: block;
+      }
     }
   }
 }
