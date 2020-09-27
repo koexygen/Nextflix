@@ -13,7 +13,11 @@ export default class Browse extends React.Component {
       <div className="browse-page">
         <HeaderNavContainer />
         <BrowseBillboardContainer />
-        <Slider />
+        <div className="sliders-container">
+          <Slider />
+          <Slider />
+          <Slider />
+        </div>
       </div>
     );
   }

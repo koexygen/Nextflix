@@ -5,7 +5,7 @@ export default class Slider extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeIndex: 0 };
+    this.state = { activeIndex: 0, apiKey: "afc2df6ed2b105665b061dcc22c09716" };
     this.goToPrevSlide = this.goToPrevSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
   }

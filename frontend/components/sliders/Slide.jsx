@@ -2,7 +2,7 @@ import React from "react";
 
 const Slide = (props) => {
   return (
-    <ul className="slide-container">
+    <ul className={"slide-container"}>
       <span className="slider-arrow" onClick={props.prevSlide}>
         {"<"}
       </span>
