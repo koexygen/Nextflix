@@ -5,15 +5,21 @@ import LoginPage from "./LoginPage";
 import SignUpPageContainer from "./SignUpPageContainer";
 import SignUpFormContainer from "./forms/SignUpFormContainer";
 import BrowseContainer from "./browse/BrowseContainer";
+import ProtectedRouteContainer from "./ProtectedRouteContainer";
 
 const App = () => {
   return (
     <Switch>
-      <Route exact path="/" component={LandingPage} />;
       <Route exact path="/login" component={LoginPage} />;
       <Route exact path="/signup/form" component={SignUpFormContainer} />;
       <Route exact path="/signup" component={SignUpPageContainer} />;
-      <Route exact path="/browse" component={BrowseContainer} />;
+      <ProtectedRouteContainer
+        exact
+        path="/browse"
+        component={BrowseContainer}
+      />
+      ;
+      <Route path="*" component={LandingPage} />;
     </Switch>
   );
 };
