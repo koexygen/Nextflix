@@ -17,23 +17,17 @@ export default class Slider extends React.Component {
   goToNextSlide(e) {
     e.preventDefault();
 
-    let idx = this.state.activeIndex;
-    let slidesLength = moviesData.length;
-
-    if (idx === slidesLength) idx = -1;
-    ++idx;
-    this.setState({ activeIndex: idx });
+    let currIdx = this.state.activeIndex;
+    currIdx = (currIdx + 1) % moviesData.length;
+    this.setState({ activeIndex: currIdx });
   }
 
   goToPrevSlide(e) {
     e.preventDefault();
 
-    let idx = this.state.activeIndex;
-    let slidesLength = moviesData.length;
-
-    if (idx < 1) idx = slidesLength;
-    --idx;
-    this.setState({ activeIndex: idx });
+    let currIdx = this.state.activeIndex;
+    currIdx = Math.abs((currIdx - 1) % moviesData.length);
+    this.setState({ activeIndex: currIdx });
   }
 
   render() {
