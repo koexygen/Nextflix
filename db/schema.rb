@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_104905) do
+ActiveRecord::Schema.define(version: 2020_09_27_225523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,42 @@ ActiveRecord::Schema.define(version: 2020_09_25_104905) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.integer "tv_series_id"
+    t.integer "watchlist_id"
+    t.integer "director_id"
+    t.string "release_date"
+    t.string "image_url"
+    t.string "video_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title", "tv_series_id"], name: "index_movies_on_title_and_tv_series_id", unique: true
+    t.index ["watchlist_id", "director_id"], name: "index_movies_on_watchlist_id_and_director_id", unique: true
+  end
+
+  create_table "tv_series", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.integer "seasons"
+    t.integer "watchlist_id"
+    t.integer "director_id"
+    t.string "release_date"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["director_id", "watchlist_id"], name: "index_tv_series_on_director_id_and_watchlist_id", unique: true
+    t.index ["title"], name: "index_tv_series_on_title"
   end
 
   create_table "users", force: :cascade do |t|
