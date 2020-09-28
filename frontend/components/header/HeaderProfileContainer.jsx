@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
   const currentUser = state.entities.users[state.session.id];
-  // debugger;
   return {
     currentUser: currentUser,
   };

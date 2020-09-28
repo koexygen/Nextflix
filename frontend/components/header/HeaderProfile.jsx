@@ -25,7 +25,6 @@ export default class HeaderProfile extends React.Component {
   }
 
   render() {
-    // debugger;
     return (
       <div
         className="header-profile-container"
