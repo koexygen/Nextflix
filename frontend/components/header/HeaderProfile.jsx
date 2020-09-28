@@ -33,10 +33,7 @@ export default class HeaderProfile extends React.Component {
         onMouseLeave={this.hoverDropdownOff}
       >
         <div className={"profile-picture"}>
-          <img
-            src={this.props.currentUser.image_url || window.profileImgUrl}
-            alt="profile-picture"
-          />
+          <img src={window.profileImgUrl} alt="profile-picture" />
           <span className="dropdown-arrow"></span>
         </div>
         <div className={`profile-dropdown ${this.state.hoverClass}`}>
