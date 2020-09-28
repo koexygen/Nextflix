@@ -18,7 +18,6 @@ class HeaderNav extends React.Component {
       .then(() => this.props.history.push("/browse"));
   }
 
-  // debugger;
   render() {
     return (
       <nav className="navbar-header">
