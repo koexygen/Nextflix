@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_225523) do
     t.string "video_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["title", "tv_series_id"], name: "index_movies_on_title_and_tv_series_id", unique: true
-    t.index ["watchlist_id", "director_id"], name: "index_movies_on_watchlist_id_and_director_id", unique: true
+    t.index ["title", "tv_series_id"], name: "index_movies_on_title_and_tv_series_id"
+    t.index ["watchlist_id", "director_id"], name: "index_movies_on_watchlist_id_and_director_id"
   end
 
   create_table "tv_series", force: :cascade do |t|

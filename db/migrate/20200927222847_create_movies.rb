@@ -13,7 +13,7 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_index :movies, [:title,:tv_series_id], unique: true
-    add_index :movies, [:watchlist_id, :director_id], unique: true
+    add_index :movies, [:title,:tv_series_id]
+    add_index :movies, [:watchlist_id, :director_id]
   end
 end
