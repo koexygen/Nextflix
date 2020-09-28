@@ -1,1 +1,0 @@
-json.movie @movie
