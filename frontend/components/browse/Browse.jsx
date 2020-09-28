@@ -1,12 +1,15 @@
 import React from "react";
 import HeaderNavContainer from "../header/Header-navContainer";
 import BrowseBillboardContainer from "./BrowseBillboardContainer";
-import Slider from "../sliders/Slider";
+import SliderContainer from "../sliders/SliderContainer";
 
 export default class Browse extends React.Component {
   constructor(props) {
     super(props);
+    this.props.getMovies().then((movies) => console.log(movies.movies));
   }
+
+  componentDidMount() {}
 
   render() {
     return (
@@ -14,9 +17,9 @@ export default class Browse extends React.Component {
         <HeaderNavContainer />
         <BrowseBillboardContainer />
         <div className="sliders-container">
-          <Slider />
-          <Slider />
-          <Slider />
+          <SliderContainer movies={this.props.movies} />
+          <SliderContainer movies={this.props.movies} />
+          <SliderContainer movies={this.props.movies} />
         </div>
       </div>
     );
