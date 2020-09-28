@@ -4,7 +4,6 @@ import { withRouter } from "react-router";
 import { loginUser } from "../../actions/session_action";
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
   return {
     errors: state.errors,
     currentUser: state.entities.users[state.session.id],
