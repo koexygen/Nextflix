@@ -5,7 +5,7 @@ export default class Slider extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeIndex: 0, apiKey: "afc2df6ed2b105665b061dcc22c09716" };
+    this.state = { activeIndex: 0 };
     this.goToPrevSlide = this.goToPrevSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
   }
@@ -18,7 +18,7 @@ export default class Slider extends React.Component {
     e.preventDefault();
 
     let currIdx = this.state.activeIndex;
-    currIdx = (currIdx + 1) % moviesData.length;
+    currIdx = (currIdx + 1) % this.props.movies.length;
     this.setState({ activeIndex: currIdx });
   }
 
@@ -26,7 +26,7 @@ export default class Slider extends React.Component {
     e.preventDefault();
 
     let currIdx = this.state.activeIndex;
-    currIdx = Math.abs((currIdx - 1) % moviesData.length);
+    currIdx = Math.abs((currIdx - 1) % this.props.movies.length);
     this.setState({ activeIndex: currIdx });
   }
 
@@ -34,7 +34,7 @@ export default class Slider extends React.Component {
     return (
       <div className="slider-container">
         <Slide
-          movies={moviesData[this.state.activeIndex]}
+          movies={this.props.movies}
           prevSlide={this.goToPrevSlide}
           nextSlide={this.goToNextSlide}
         />
@@ -42,46 +42,3 @@ export default class Slider extends React.Component {
     );
   }
 }
-
-const moviesData = [
-  [
-    {
-      text: "Gio",
-    },
-    {
-      text: "Paloma",
-    },
-    {
-      text: "AppAcademy",
-    },
-    {
-      text: "Josh",
-    },
-    {
-      text: "rich",
-    },
-    {
-      text: "Someone",
-    },
-  ],
-  [
-    {
-      text: "Gio2",
-    },
-    {
-      text: "Paloma2",
-    },
-    {
-      text: "AppAcademy2",
-    },
-    {
-      text: "Josh2",
-    },
-    {
-      text: "rich2",
-    },
-    {
-      text: "Someone2",
-    },
-  ],
-];

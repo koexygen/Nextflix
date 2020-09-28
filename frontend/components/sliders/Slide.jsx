@@ -10,7 +10,7 @@ const Slide = (props) => {
       {props.movies.map((movie, idx) => {
         return (
           <li className="slide-movie" key={idx}>
-            {movie.text}
+            <img src={movie.image_url} alt="a" />
           </li>
         );
       })}

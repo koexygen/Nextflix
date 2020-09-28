@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/Root";
 import configureStore from "./store/store";
-import { loginUser, logoutUser } from "./actions/session_action";
+import { loginUser, logoutUser, getMovies } from "./actions/session_action";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.state = store.getState;
   window.login = loginUser;
   window.logout = logoutUser;
+  window.getMovies = getMovies;
 
   ReactDOM.render(<Root store={store} />, root);
 });
