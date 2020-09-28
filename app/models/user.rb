@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
-  after_initialize :ensure_session_token, :check_avatar
+  after_initialize :ensure_session_token
 
   def password=(password)
     @password = password
@@ -32,7 +32,5 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  def check_avatar
-    self.image_url = self.avatar.service_url if self.avatar.attached?
-  end
+
 end
