@@ -10,6 +10,8 @@ export default class Slider extends React.Component {
     this.goToNextSlide = this.goToNextSlide.bind(this);
   }
 
+  componentDidMount() {}
+
   goToSlide(index) {
     this.setState({ activeIndex: index });
   }
@@ -31,14 +33,19 @@ export default class Slider extends React.Component {
   }
 
   render() {
-    return (
-      <div className="slider-container">
-        <Slide
-          movies={this.props.movies}
-          prevSlide={this.goToPrevSlide}
-          nextSlide={this.goToNextSlide}
-        />
-      </div>
-    );
+    // debugger;
+    if (this.props.movies[this.state.activeIndex]) {
+      return (
+        <div className="slider-container">
+          <Slide
+            movies={this.props.movies[this.state.activeIndex]}
+            prevSlide={this.goToPrevSlide}
+            nextSlide={this.goToNextSlide}
+          />
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
