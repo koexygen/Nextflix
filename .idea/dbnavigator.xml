@@ -66,7 +66,7 @@
           <description value="Nextflix Database" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="12.3" />
+          <database-version value="12.4" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />

@@ -6,7 +6,8 @@ import SliderContainer from "../sliders/SliderContainer";
 export default class Browse extends React.Component {
   constructor(props) {
     super(props);
-    this.props.getMovies().then((movies) => console.log(movies.movies));
+
+    this.props.getMovies();
   }
 
   componentDidMount() {}
