@@ -6,7 +6,7 @@ const splitMovies = (movies) => {
   let temp = [];
 
   movies.forEach((movie, idx) => {
-    if (idx % 10 === 0 && idx > 0) {
+    if (idx % 7 === 0 && idx > 0) {
       result.push(temp);
       temp = [];
     }

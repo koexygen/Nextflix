@@ -1,6 +1,7 @@
 import React from "react";
 
 const imgBasePath = "https://image.tmdb.org/t/p/w500/";
+const videoPath = "https://www.youtube.com/watch?v=";
 
 const Slide = (props) => {
   // console.log(props.tmdb);
@@ -37,6 +38,8 @@ const Slide = (props) => {
                 }
                 alt="a"
               />
+
+              <div className="movie-preview"></div>
             </li>
           );
         })}

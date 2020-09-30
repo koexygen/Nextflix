@@ -25,6 +25,7 @@
         border: none;
         opacity: 0;
         transition: opacity 0.5s;
+        z-index: 1;
 
         span {
           width: 25px;
