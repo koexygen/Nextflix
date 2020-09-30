@@ -1,6 +1,9 @@
 import React from "react";
 
+const imgBasePath = "https://image.tmdb.org/t/p/w500/";
+
 const Slide = (props) => {
+  // console.log(props.tmdb);
   return (
     <ul className={"slide-container"}>
       <span className="slider-arrow" onClick={props.prevSlide}>
@@ -10,7 +13,14 @@ const Slide = (props) => {
       {props.movies.map((movie, idx) => {
         return (
           <li className="slide-movie" key={idx}>
-            <img src={movie.image_url} alt="a" />
+            <img
+              src={
+                props.tmdb
+                  ? `${imgBasePath + movie.poster_path}`
+                  : movie.image_url
+              }
+              alt="a"
+            />
           </li>
         );
       })}

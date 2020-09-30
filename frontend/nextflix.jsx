@@ -12,10 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
       entities: {
         users: { [window.currentUser.id]: window.currentUser },
       },
-      session: { id: window.currentUser.id },
+      session: { id: window.currentUser.id, key: window.api },
     };
     store = configureStore(preLoadedState);
     delete window.currentUser;
+    delete window.api;
   } else {
     store = configureStore();
   }

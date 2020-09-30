@@ -39,6 +39,7 @@ export default class Slider extends React.Component {
         <div className="slider-container">
           <Slide
             movies={this.props.movies[this.state.activeIndex]}
+            tmdb={this.props.tmdb}
             prevSlide={this.goToPrevSlide}
             nextSlide={this.goToNextSlide}
           />
