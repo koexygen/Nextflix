@@ -6,6 +6,7 @@
   window.devicesImgUrl = '<%= image_url('devices.png')%>'
   window.spartacusTitleImgUrl = '<%= image_url('spartacus-title.webp')%>'
   window.billboardImgUrl = '<%= image_url('billboard.webp')%>'
+  window.api = '<%= Rails.application.credentials.moviedb %>'
 </script>
 
 <% if logged_in? %>

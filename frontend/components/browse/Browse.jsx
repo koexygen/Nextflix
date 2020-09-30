@@ -10,17 +10,27 @@ export default class Browse extends React.Component {
     this.props.getMovies();
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.getPopular(this.props.apikey);
+    // debugger;
+  }
 
   render() {
+    // debugger;
     return (
       <div className="browse-page">
         <HeaderNavContainer />
         <BrowseBillboardContainer />
         <div className="sliders-container">
-          <SliderContainer movies={this.props.movies} />
-          <SliderContainer movies={this.props.movies} />
-          <SliderContainer movies={this.props.movies} />
+          {this.props.movies.popularMovies ? (
+            <SliderContainer
+              movies={this.props.movies.popularMovies}
+              tmdb={true}
+            />
+          ) : null}
+
+          {/*<SliderContainer movies={this.props.movies} />*/}
+          {/*<SliderContainer movies={this.props.movies} />*/}
         </div>
       </div>
     );
