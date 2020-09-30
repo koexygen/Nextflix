@@ -34,9 +34,6 @@ export default class Browse extends React.Component {
               tmdb={true}
             />
           ) : null}
-
-          {/*<SliderContainer movies={this.props.movies} />*/}
-          {/*<SliderContainer movies={this.props.movies} />*/}
         </div>
       </div>
     );
