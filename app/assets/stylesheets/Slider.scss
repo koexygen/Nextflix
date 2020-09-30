@@ -88,6 +88,7 @@
         .modal-buttons {
           display: flex;
           justify-content: space-evenly;
+          padding: 15px;
 
           button {
             height: 2.4rem;
@@ -108,8 +109,8 @@
       &:hover {
         transform: scale(1.5) !important;
         overflow: visible;
-        width: 300px;
         height: 100%;
+        flex: 2 1 auto;
 
         .movie-modal {
           overflow: visible;
