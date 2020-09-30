@@ -1,7 +1,7 @@
 import React from "react";
 
 const imgBasePath = "https://image.tmdb.org/t/p/w500/";
-const videoPath = "https://www.youtube.com/watch?v=";
+const videoPath = "http://www.youtube.com/watch?v=";
 
 const Slide = (props) => {
   // console.log(props.tmdb);
@@ -26,20 +26,38 @@ const Slide = (props) => {
             </svg>
           </span>
         </button>
-
         {props.movies.map((movie, idx) => {
           return (
             <li className="slide-movie" key={idx}>
-              <img
-                src={
-                  props.tmdb
-                    ? `${imgBasePath + movie.poster_path}`
-                    : movie.image_url
-                }
-                alt="a"
-              />
+              <div className="slide-movie-header">
+                <img
+                  src={
+                    props.tmdb
+                      ? `${imgBasePath + movie.poster_path}`
+                      : movie.image_url
+                  }
+                  alt="a"
+                />
+              </div>
 
-              <div className="movie-preview"></div>
+              <div className="movie-modal">
+                <div className="modal-buttons">
+                  <button className="modal-play-button">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 4l15 8-15 8z" fill="currentColor"></path>
+                    </svg>
+                  </button>
+
+                  <button className="modal-add-list">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M13 11h8v2h-8v8h-2v-8H3v-2h8V3h2v8z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </li>
           );
         })}
