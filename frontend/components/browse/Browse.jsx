@@ -28,6 +28,12 @@ export default class Browse extends React.Component {
               tmdb={true}
             />
           ) : null}
+          {this.props.movies.popularMovies ? (
+            <SliderContainer
+              movies={this.props.movies.popularMovies}
+              tmdb={true}
+            />
+          ) : null}
 
           {/*<SliderContainer movies={this.props.movies} />*/}
           {/*<SliderContainer movies={this.props.movies} />*/}
