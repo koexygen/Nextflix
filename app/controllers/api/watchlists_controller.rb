@@ -4,8 +4,8 @@ class Api::WatchlistsController < ApplicationController
   end
 
   def show
-    @watchlist = current_user.movies
-    render @watchlist
+    @watchlist = current_user.watchlist.movies
+    render json: @watchlist
   end
 
   def update

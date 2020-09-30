@@ -36,6 +36,5 @@ class User < ApplicationRecord
     self.image_url = self.avatar.service_url if self.avatar.attached?
   end
 
-  has_many :watchlists
-  has_many :movies, through: :watchlists
+  has_one :watchlist
 end
