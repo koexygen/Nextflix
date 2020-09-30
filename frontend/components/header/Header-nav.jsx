@@ -33,7 +33,9 @@ class HeaderNav extends React.Component {
           <li>TV Shows</li>
           <li>Movies</li>
           <li>Latest</li>
-          <li>My List</li>
+          <Link to="/browse/watchlist">
+            <li>My List</li>
+          </Link>
         </ul>
 
         {this.props.currentUser ? (

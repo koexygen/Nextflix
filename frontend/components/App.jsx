@@ -20,7 +20,12 @@ const App = () => {
         component={BrowseContainer}
       />
       ;
-      <Route exact path="/watchlist" component={WatchlistContainer} />;
+      <ProtectedRouteContainer
+        exact
+        path="/browse/watchlist"
+        component={WatchlistContainer}
+      />
+      ;
       <Route path="*" component={LandingPage} />;
     </Switch>
   );
