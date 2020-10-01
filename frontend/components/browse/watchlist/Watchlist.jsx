@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderNavContainer from "../../header/Header-navContainer";
+import { Link } from "react-router";
 export default class Watchlist extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +17,7 @@ export default class Watchlist extends React.Component {
           <HeaderNavContainer />
           <h1>My List</h1>
           <div className="watchlist-container">
-            {this.props.watchlist.map((movie, idx) => {
+            {Object.values(this.props.watchlist).map((movie, idx) => {
               return (
                 <div className="watchlist-movie" key={idx}>
                   <img src={movie.image_url} alt="" />
@@ -27,7 +28,11 @@ export default class Watchlist extends React.Component {
         </div>
       );
     } else {
-      return null;
+      return (
+        <div className="watchlist-page">
+          <HeaderNavContainer />
+        </div>
+      );
     }
   }
 }

@@ -6,6 +6,7 @@ export const LOGOUT_USER = "LOGOUT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_INPUT_EMAIL = "RECEIVE_EMAIL";
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
+export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
 export const RECEIVE_WATCHLIST = "RECEIVE_WATCHLIST";
 
 export const receiveCurrentUser = (user) => ({
@@ -21,6 +22,11 @@ export const receiveEmailFromInput = (email) => ({
 export const receiveMovies = (movies) => ({
   type: RECEIVE_MOVIES,
   movies,
+});
+
+export const receiveMovie = (movie) => ({
+  type: RECEIVE_MOVIE,
+  movie,
 });
 
 export const receiveWatchlist = (movies) => ({
@@ -41,6 +47,15 @@ export const getMovies = () => (dispatch) => {
   return FetchUtil.getMovies().then(
     (movies) => {
       return dispatch(receiveMovies(movies));
+    },
+    (errors) => dispatch(receiveSessionError(errors.responseJSON))
+  );
+};
+
+export const getMovie = (id) => (dispatch) => {
+  return FetchUtil.getMovie(id).then(
+    (movie) => {
+      return dispatch(receiveMovie(movie));
     },
     (errors) => dispatch(receiveSessionError(errors.responseJSON))
   );

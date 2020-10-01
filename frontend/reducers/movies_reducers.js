@@ -1,4 +1,4 @@
-import { RECEIVE_MOVIES } from "../actions/session_action";
+import { RECEIVE_MOVIES, RECEIVE_MOVIE } from "../actions/session_action";
 import { RECEIVE_POPULAR_MOVIES } from "../actions/moviedb_actions";
 
 const splitMovies = (movies) => {
@@ -24,8 +24,16 @@ const moviesReducer = (state = {}, action) => {
       return Object.assign({}, state, {
         popularMovies: splitMovies(action.movies),
       });
+
+    case RECEIVE_MOVIE:
+      // debugger;
+      return action.movie;
     case RECEIVE_MOVIES:
-      return Object.assign({}, state, { dbmovies: splitMovies(action.movies) });
+      let newState = Object.assign({}, state);
+      for (let [id, movie] of Object.entries(action.movies)) {
+        newState[movie.id] = movie;
+      }
+      return newState;
     default:
       return state;
   }

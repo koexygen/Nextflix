@@ -2,7 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/Root";
 import configureStore from "./store/store";
-import { loginUser, logoutUser, getMovies } from "./actions/session_action";
+import {
+  loginUser,
+  logoutUser,
+  getMovies,
+  getMovie,
+} from "./actions/session_action";
 import { getWatchlists } from "./util/fetch_util";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.login = loginUser;
   window.logout = logoutUser;
   window.getMovies = getMovies;
+  window.getMovie = getMovie;
   window.getWatchlists = getWatchlists;
 
   ReactDOM.render(<Root store={store} />, root);
