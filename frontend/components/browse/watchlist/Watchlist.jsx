@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderNavContainer from "../../header/Header-navContainer";
-
 export default class Watchlist extends React.Component {
   constructor(props) {
     super(props);
@@ -8,11 +7,14 @@ export default class Watchlist extends React.Component {
     this.props.getWatchlist();
   }
 
+  handlePlay(url) {}
+
   render() {
     if (this.props.watchlist) {
       return (
         <div className="watchlist-page">
           <HeaderNavContainer />
+          <h1>My List</h1>
           <div className="watchlist-container">
             {this.props.watchlist.map((movie, idx) => {
               return (

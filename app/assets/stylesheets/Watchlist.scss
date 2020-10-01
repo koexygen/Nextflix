@@ -3,7 +3,36 @@
     position: relative;
   }
 
+  h1 {
+    margin-right: 20px;
+    line-height: 36px;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 65px;
+    padding-left: 63px;
+    padding-top: 20px;
+  }
+
   .watchlist-container {
     display: grid;
+    grid-template-columns: repeat(6, 250px);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 2px;
+    grid-row-gap: 10px;
+    padding: 0 60px;
+
+    .watchlist-movie {
+      img {
+        width: 100%;
+      }
+
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        transform: scale(1.2);
+        flex-grow: 2;
+        box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+      }
+    }
   }
 }
