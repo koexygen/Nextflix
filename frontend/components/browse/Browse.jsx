@@ -7,12 +7,13 @@ export default class Browse extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.getMovies();
+    this.state = { key: this.props.apikey };
   }
 
   componentDidMount() {
     this.props.getPopular(this.props.apikey);
-    // debugger;
+    this.props.error ? this.props.getPopular(this.props.apikey) : null;
+    this.props.getMovies();
   }
 
   render() {
