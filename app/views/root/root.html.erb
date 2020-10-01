@@ -1,12 +1,12 @@
 <script type="text/javascript" charset="utf-8">
-  window.nextflixLogoUrl = '<%= image_url('nextflix-logo.png')%>'
-  window.netflixLogoUrl = '<%= image_url('netflix-logo.png')%>'
-  window.coverWallPaperUrl = '<%= image_url('cover-wallpaper.jpg')%>'
-  window.profileImgUrl = '<%= image_url('default-profile.png')%>'
-  window.devicesImgUrl = '<%= image_url('devices.png')%>'
-  window.spartacusTitleImgUrl = '<%= image_url('spartacus-title.webp')%>'
-  window.billboardImgUrl = '<%= image_url('billboard.webp')%>'
-  window.api = '<%= Rails.application.credentials.moviedb %>'
+    window.api = '<%= Rails.application.credentials.moviedb %>'
+    window.nextflixLogoUrl = '<%= image_url('nextflix-logo.png')%>'
+    window.netflixLogoUrl = '<%= image_url('netflix-logo.png')%>'
+    window.coverWallPaperUrl = '<%= image_url('cover-wallpaper.jpg')%>'
+    window.profileImgUrl = '<%= image_url('default-profile.png')%>'
+    window.devicesImgUrl = '<%= image_url('devices.png')%>'
+    window.spartacusTitleImgUrl = '<%= image_url('spartacus-title.webp')%>'
+    window.billboardImgUrl = '<%= image_url('billboard.webp')%>'
 </script>
 
 
@@ -14,10 +14,13 @@
   <script type="text/javascript">
       window.currentUser = <%= render(
       "api/users/user.json.jbuilder",
-      user: current_user
-    ).html_safe %>
+      user: current_user,
+
+      ).html_safe %>
   </script>
 <% end %>
+
+
 
 <div id="root">
 </div>

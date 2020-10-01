@@ -18,13 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
       entities: {
         users: { [window.currentUser.id]: window.currentUser },
       },
-      session: { id: window.currentUser.id, key: window.api },
+      session: { key: window.api, id: window.currentUser.id },
     };
     store = configureStore(preLoadedState);
-    delete window.currentUser;
     delete window.api;
+    delete window.currentUser;
   } else {
-    store = configureStore();
+    const preLoadedState = {
+      session: { key: window.api },
+    };
+    delete window.api;
+    store = configureStore(preLoadedState);
   }
   window.dispatch = store.dispatch;
   window.state = store.getState;

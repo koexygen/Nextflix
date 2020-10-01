@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
   return {
     movies: state.entities.movies,
     apikey: state.session.key,
+    error: state.errors.session.status_code,
   };
 };
 
