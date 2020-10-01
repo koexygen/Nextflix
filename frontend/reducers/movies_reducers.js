@@ -26,8 +26,7 @@ const moviesReducer = (state = {}, action) => {
       });
 
     case RECEIVE_MOVIE:
-      // debugger;
-      return action.movie;
+      return { [action.movie.info.id]: action.movie.info };
     case RECEIVE_MOVIES:
       let newState = Object.assign({}, state);
       for (let [id, movie] of Object.entries(action.movies)) {

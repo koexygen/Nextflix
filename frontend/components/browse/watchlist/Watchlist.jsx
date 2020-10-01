@@ -6,9 +6,12 @@ export default class Watchlist extends React.Component {
     super(props);
 
     this.props.getWatchlist();
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
-  handlePlay(url) {}
+  handlePlay(id) {
+    this.props.history.push(`/watch/${id}`);
+  }
 
   render() {
     if (this.props.watchlist) {
@@ -19,8 +22,12 @@ export default class Watchlist extends React.Component {
           <div className="watchlist-container">
             {Object.values(this.props.watchlist).map((movie, idx) => {
               return (
-                <div className="watchlist-movie" key={idx}>
-                  <img src={movie.image_url} alt="" />
+                <div
+                  className="watchlist-movie"
+                  key={idx}
+                  onClick={() => this.handlePlay(movie.id)}
+                >
+                  <img src={movie.image_url} alt={movie.title} />{" "}
                 </div>
               );
             })}
