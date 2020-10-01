@@ -6,6 +6,8 @@ import SignUpPageContainer from "./SignUpPageContainer";
 import SignUpFormContainer from "./forms/SignUpFormContainer";
 import BrowseContainer from "./browse/BrowseContainer";
 import ProtectedRouteContainer from "./ProtectedRouteContainer";
+import WatchlistContainer from "./browse/watchlist/WatchlistContainer";
+import Player from "./player/Player";
 
 const App = () => {
   return (
@@ -19,6 +21,13 @@ const App = () => {
         component={BrowseContainer}
       />
       ;
+      <ProtectedRouteContainer
+        exact
+        path="/browse/watchlist"
+        component={WatchlistContainer}
+      />
+      ;
+      <Route exact path="/watch/:id" component={Player} />;
       <Route path="*" component={LandingPage} />;
     </Switch>
   );

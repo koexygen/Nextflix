@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_225523) do
+ActiveRecord::Schema.define(version: 2020_09_30_170208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,19 @@ ActiveRecord::Schema.define(version: 2020_09_27_225523) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "watchlist_id"
+    t.integer "movie_id"
+    t.integer "tvseries_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_likes_on_movie_id"
+    t.index ["tvseries_id"], name: "index_likes_on_tvseries_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["watchlist_id"], name: "index_likes_on_watchlist_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -81,6 +94,14 @@ ActiveRecord::Schema.define(version: 2020_09_27_225523) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["username", "email", "session_token"], name: "index_users_on_username_and_email_and_session_token", unique: true
+  end
+
+  create_table "watchlists", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

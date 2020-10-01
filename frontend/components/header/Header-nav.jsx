@@ -28,6 +28,15 @@ class HeaderNav extends React.Component {
             className="nextflix-logo"
           />
         </Link>
+        <ul>
+          <li>Home</li>
+          <li>TV Shows</li>
+          <li>Movies</li>
+          <li>Latest</li>
+          <Link to="/browse/watchlist">
+            <li>My List</li>
+          </Link>
+        </ul>
 
         {this.props.currentUser ? (
           <HeaderProfileContainer />

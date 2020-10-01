@@ -4,4 +4,6 @@ class Movie < ApplicationRecord
   has_many :genres
 
   has_one_attached :movie_image
+  has_many :watchlists
+  has_many :likes
 end

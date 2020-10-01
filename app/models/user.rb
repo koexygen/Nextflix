@@ -35,4 +35,6 @@ class User < ApplicationRecord
   def check_avatar
     self.image_url = self.avatar.service_url if self.avatar.attached?
   end
+
+  has_one :watchlist
 end

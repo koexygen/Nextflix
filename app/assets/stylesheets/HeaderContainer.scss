@@ -13,6 +13,29 @@
     rgba(0, 0, 0, 0.75) 5%,
     rgba(0, 0, 0, 0)
   );
+
+  ul {
+    margin-right: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+
+    li {
+      margin-left: 20px;
+      position: relative;
+      color: #e5e5e5;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 0.9rem;
+
+      &:hover {
+        cursor: pointer;
+        color: #b3b3b3;
+      }
+    }
+  }
 }
 
 .nextflix-logo {
