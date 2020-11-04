@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router";
 
 const imgBasePath = "https://image.tmdb.org/t/p/w500/";
 const videoPath = "http://www.youtube.com/watch?v=";
 
 const Slide = (props) => {
+  // debugger;
   // console.log(props.tmdb);
   return (
     <div>
@@ -42,11 +44,16 @@ const Slide = (props) => {
 
               <div className="movie-modal">
                 <div className="modal-buttons">
-                  <button className="modal-play-button">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M6 4l15 8-15 8z" fill="currentColor"></path>
-                    </svg>
-                  </button>
+                  <a href={`/watch/${movie.id}`}>
+                    <button
+                      className="modal-play-button"
+                      // onClick={() => handlePlay(movie.id)}
+                    >
+                      <svg viewBox="0 0 24 24">
+                        <path d="M6 4l15 8-15 8z" fill="currentColor"></path>
+                      </svg>
+                    </button>
+                  </a>
 
                   <button className="modal-add-list">
                     <svg viewBox="0 0 24 24">

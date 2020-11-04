@@ -9,22 +9,25 @@ export const receivePopular = (movies) => ({
   movies,
 });
 
-const mergeTrailers = (movies) => {
-  const youtubePath = "https://www.youtube.com/watch?v=";
-
-  return movies.map((movie) => {
-    return (movie.trailer =
-      youtubePath +
-      MDB_Utils.getMovieTrailer(movie.id, "afc2df6ed2b105665b061dcc22c09716")
-        .key);
-  });
-};
+// const mergeTrailers = (movies) => {
+//   const youtubePath = "https://www.youtube.com/watch?v=";
+//   movies.forEach((movie, idx) => {
+//     MDB_Utils.getMovieTrailer(
+//       movie.id,
+//       "afc2df6ed2b105665b061dcc22c09716"
+//     ).then((resp) => {
+//       movies[idx]["trailer"] = youtubePath + resp.results[0].key;
+//     });
+//   });
+//
+//   return movies;
+// };
 
 export const getPopularMovies = (key) => (dispatch) => {
   return MDB_Utils.fetchPopular(key).then(
     (movies) => {
-      let newList = mergeTrailers(movies.results);
-      debugger;
+      // let newList = mergeTrailers(movies.results);
+      // // debugger;
       return dispatch(receivePopular(movies.results));
     },
     (error) => dispatch(receiveSessionError(error.responseJSON))

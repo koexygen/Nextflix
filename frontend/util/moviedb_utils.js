@@ -9,7 +9,7 @@ export const getMovieTrailer = (movieId, key) => {
   return $.ajax({
     method: "GET",
     url: `
-https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${key}
+https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&append_to_response=videos
 `,
   });
 };
