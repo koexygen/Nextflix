@@ -7,21 +7,27 @@ import { getMovieTrailer } from "../../actions/moviedb_actions";
 class Player extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {};
   }
 
   componentDidMount() {
+    const youtubePath = "https://www.youtube.com/watch?v=";
     this.props.getMovie(this.props.match.params.id);
     this.props.match.params.id > 10
-      ? this.props.getTrailer(this.props.match.params.id)
+      ? this.props.getTrailer(this.props.match.params.id).then((data) => {
+          this.setState({ trailer: youtubePath + data.results[0].key });
+        })
       : null;
 
-    debugger;
+    console.log(this.state);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       this.onRouteChanged();
     }
+    console.log(this.state);
   }
 
   onRouteChanged() {
@@ -29,9 +35,9 @@ class Player extends React.Component {
   }
 
   render() {
-    if (this.props.youtubeUrl) {
+    if (this.state.trailer) {
       return (
-        <iframe width="420" height="345" src={this.props.youtubeUrl}></iframe>
+        <iframe width="420" height="345" src={this.state.trailer}></iframe>
       );
     }
     if (this.props.movie) {
@@ -59,7 +65,7 @@ class Player extends React.Component {
 
 const mSTP = (state, ownProps) => {
   let movie = state.entities.movies[ownProps.match.params.id];
-  debugger;
+  // debugger;
   return {
     movie: movie,
   };

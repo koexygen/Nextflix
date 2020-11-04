@@ -42,7 +42,7 @@ export const receiveMovieTrailer = (trailer) => ({
 export const getMovieTrailer = (movieId, key) => (dispatch) => {
   return MDB_Utils.getMovieTrailer(movieId, key).then(
     (data) => {
-      return dispatch(receiveMovieTrailer(data.key));
+      return dispatch(receiveMovieTrailer(data.results[0].key));
     },
     (error) => dispatch(receiveSessionError(error.responseJSON))
   );
