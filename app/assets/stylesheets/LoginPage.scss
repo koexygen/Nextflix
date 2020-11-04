@@ -6,11 +6,12 @@ $label-color: #8c8c8c;
 $error-color: #e87c03;
 
 .form-container {
-  position: relative;
+  position: fixed;
   z-index: 1;
   margin: 180px auto;
   width: 400px;
   min-height: 600px;
+  left: 40%;
 
   .login-form {
     color: white;
