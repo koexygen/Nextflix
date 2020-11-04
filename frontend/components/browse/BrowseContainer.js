@@ -1,7 +1,10 @@
 import { connect } from "react-redux";
 import Browse from "./Browse";
 import { getMovies } from "../../actions/session_action";
-import { getPopularMovies } from "../../actions/moviedb_actions";
+import {
+  getPopularMovies,
+  getMovieTrailer,
+} from "../../actions/moviedb_actions";
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +18,7 @@ const mapDispatchToProps = () => (dispatch) => {
   return {
     getMovies: () => dispatch(getMovies()),
     getPopular: (key) => dispatch(getPopularMovies(key)),
+    getMovieTrailer: (movieId, key) => dispatch(getMovieTrailer(movieId, key)),
   };
 };
 

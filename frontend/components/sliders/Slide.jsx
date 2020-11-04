@@ -34,7 +34,7 @@ const Slide = (props) => {
                   src={
                     props.tmdb
                       ? `${imgBasePath + movie.poster_path}`
-                      : movie.image_url
+                      : `${movie.image_url}`
                   }
                   alt="a"
                 />

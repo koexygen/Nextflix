@@ -33,7 +33,6 @@ export default class Slider extends React.Component {
   }
 
   render() {
-    // debugger;
     if (this.props.movies[this.state.activeIndex]) {
       return (
         <div className="slider-container">

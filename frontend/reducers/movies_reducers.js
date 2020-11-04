@@ -1,5 +1,8 @@
 import { RECEIVE_MOVIES, RECEIVE_MOVIE } from "../actions/session_action";
-import { RECEIVE_POPULAR_MOVIES } from "../actions/moviedb_actions";
+import {
+  RECEIVE_POPULAR_MOVIES,
+  RECEIVE_MOVIE_TRAILER,
+} from "../actions/moviedb_actions";
 
 const splitMovies = (movies) => {
   const result = [];

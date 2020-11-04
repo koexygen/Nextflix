@@ -2,12 +2,18 @@ import React from "react";
 import HeaderNavContainer from "../header/Header-navContainer";
 import BrowseBillboardContainer from "./BrowseBillboardContainer";
 import SliderContainer from "../sliders/SliderContainer";
+import Footer from "../footer/Footer";
 
 export default class Browse extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = { key: this.props.apikey };
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  handlePlay(id) {
+    this.props.history.push(`/watch/${id}`);
   }
 
   componentDidMount() {
@@ -35,7 +41,14 @@ export default class Browse extends React.Component {
               tmdb={true}
             />
           ) : null}
+          {this.props.movies.popularMovies ? (
+            <SliderContainer
+              movies={this.props.movies.popularMovies}
+              tmdb={true}
+            />
+          ) : null}
         </div>
+        <Footer />
       </div>
     );
   }
