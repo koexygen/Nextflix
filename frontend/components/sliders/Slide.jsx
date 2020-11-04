@@ -5,8 +5,6 @@ const imgBasePath = "https://image.tmdb.org/t/p/w500/";
 const videoPath = "http://www.youtube.com/watch?v=";
 
 const Slide = (props) => {
-  // debugger;
-  // console.log(props.tmdb);
   return (
     <div>
       <h1>Popular Movies</h1>

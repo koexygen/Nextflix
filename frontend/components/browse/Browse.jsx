@@ -9,11 +9,6 @@ export default class Browse extends React.Component {
     super(props);
 
     this.state = { key: this.props.apikey };
-    this.handlePlay = this.handlePlay.bind(this);
-  }
-
-  handlePlay(id) {
-    this.props.history.push(`/watch/${id}`);
   }
 
   componentDidMount() {
