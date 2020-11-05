@@ -35,10 +35,11 @@ class Player extends React.Component {
   }
 
   render() {
-    debugger;
     if (this.state.trailer) {
       return (
-        <iframe width="100%" height="100%" src={this.state.trailer}></iframe>
+        <div>
+          <iframe width="100%" height="100%" src={this.state.trailer}></iframe>
+        </div>
       );
     }
     if (this.props.movie) {
