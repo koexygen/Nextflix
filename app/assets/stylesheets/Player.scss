@@ -4,3 +4,16 @@
     height: 100%;
   }
 }
+
+.player-container {
+  height: 100%;
+
+  .go-back-arrow {
+    color: white;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    top: 35%;
+    left: 5%;
+  }
+}

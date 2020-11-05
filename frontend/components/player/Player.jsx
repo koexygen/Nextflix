@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getMovie } from "../../actions/session_action";
 import { getMovieTrailer } from "../../actions/moviedb_actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleLeft } from "@fortawesome/fontawesome-free-solid";
 
 class Player extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {};
+    this.handleGoBack = this.handleGoBack.bind(this);
   }
 
   componentDidMount() {
@@ -34,10 +37,19 @@ class Player extends React.Component {
     });
   }
 
+  handleGoBack() {
+    this.props.history.goBack();
+  }
+
   render() {
     if (this.state.trailer) {
       return (
-        <div>
+        <div className="player-container">
+          <FontAwesomeIcon
+            icon={faArrowAltCircleLeft}
+            className="go-back-arrow"
+            onClick={this.handleGoBack}
+          />
           <iframe width="100%" height="100%" src={this.state.trailer}></iframe>
         </div>
       );
