@@ -9,6 +9,7 @@ import {
   getMovie,
 } from "./actions/session_action";
 import { getWatchlists } from "./util/fetch_util";
+import * as MDB_Utils from "./util/moviedb_utils";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getMovies = getMovies;
   window.getMovie = getMovie;
   window.getWatchlists = getWatchlists;
+  window.getTrailer = MDB_Utils.getMovieTrailer;
 
   ReactDOM.render(<Root store={store} />, root);
 });
