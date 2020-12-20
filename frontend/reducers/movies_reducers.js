@@ -2,6 +2,8 @@ import { RECEIVE_MOVIES, RECEIVE_MOVIE } from "../actions/session_action";
 import {
   RECEIVE_POPULAR_MOVIES,
   RECEIVE_MOVIE_TRAILER,
+  RECEIVE_TOP_RATED,
+  RECEIVE_NOW_PLAYING,
 } from "../actions/moviedb_actions";
 
 const splitMovies = (movies) => {
@@ -26,6 +28,16 @@ const moviesReducer = (state = {}, action) => {
     case RECEIVE_POPULAR_MOVIES:
       return Object.assign({}, state, {
         popularMovies: splitMovies(action.movies),
+      });
+
+    case RECEIVE_TOP_RATED:
+      return Object.assign({}, state, {
+        topRatedMovies: splitMovies(action.movies),
+      });
+
+    case RECEIVE_NOW_PLAYING:
+      return Object.assign({}, state, {
+        nowPlaying: splitMovies(action.movies),
       });
 
     case RECEIVE_MOVIE:

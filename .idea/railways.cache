@@ -1,0 +1,17 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+            api_watchlist GET    /api/watchlist(.:format)                                                                 api/watchlists#show {:format=>:json}
+                          PATCH  /api/watchlist(.:format)                                                                 api/watchlists#update {:format=>:json}
+                          PUT    /api/watchlist(.:format)                                                                 api/watchlists#update {:format=>:json}
+                          DELETE /api/watchlist(.:format)                                                                 api/watchlists#destroy {:format=>:json}
+                          POST   /api/watchlist(.:format)                                                                 api/watchlists#create {:format=>:json}
+              api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
+                          POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
+               api_movies GET    /api/movies(.:format)                                                                    api/movies#index {:format=>:json}
+                api_movie GET    /api/movies/:id(.:format)                                                                api/movies#show {:format=>:json}
+                     root GET    /                                                                                        root#root
+                          GET    /*path(.:format)                                                                         redirect(301, /)
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

@@ -15,5 +15,10 @@
     position: fixed;
     top: 35%;
     left: 5%;
+    opacity: 0.1;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }

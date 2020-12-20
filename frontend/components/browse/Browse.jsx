@@ -13,6 +13,8 @@ export default class Browse extends React.Component {
 
   componentDidMount() {
     this.props.getPopular(this.props.apikey);
+    this.props.getTopRated(this.props.apikey);
+    this.props.getNowPlaying(this.props.apikey);
     this.props.error ? this.props.getPopular(this.props.apikey) : null;
     this.props.getMovies();
   }
@@ -28,18 +30,21 @@ export default class Browse extends React.Component {
             <SliderContainer
               movies={this.props.movies.popularMovies}
               tmdb={true}
+              title="Popular Movies"
             />
           ) : null}
-          {this.props.movies.popularMovies ? (
+          {this.props.movies.topRatedMovies ? (
             <SliderContainer
-              movies={this.props.movies.popularMovies}
+              movies={this.props.movies.topRatedMovies}
               tmdb={true}
+              title="Top Rated Movies"
             />
           ) : null}
-          {this.props.movies.popularMovies ? (
+          {this.props.movies.nowPlaying ? (
             <SliderContainer
-              movies={this.props.movies.popularMovies}
+              movies={this.props.movies.nowPlaying}
               tmdb={true}
+              title="Upcoming Movies"
             />
           ) : null}
         </div>
