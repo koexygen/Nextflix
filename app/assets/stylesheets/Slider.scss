@@ -10,8 +10,10 @@
 
     .slide-container {
       display: flex;
+      justify-content: space-evenly;
       position: absolute;
       top: 0;
+      width: 100%;
       //align-items: center;
 
       &:hover .slider-arrow {
@@ -63,6 +65,7 @@
 
     .slide-movie {
       background: #222;
+      max-width: 150px;
       flex: 1;
       text-align: center;
       margin: 0 2px;
@@ -84,7 +87,6 @@
 
       .movie-modal {
         background-color: #181818;
-        height: 180px;
         display: block;
         width: 100%;
         transition: all 300s linear;

@@ -41,6 +41,7 @@ export default class Slider extends React.Component {
             tmdb={this.props.tmdb}
             prevSlide={this.goToPrevSlide}
             nextSlide={this.goToNextSlide}
+            title={this.props.title}
           />
         </div>
       );

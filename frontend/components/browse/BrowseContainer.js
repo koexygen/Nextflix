@@ -4,6 +4,8 @@ import { getMovies } from "../../actions/session_action";
 import {
   getPopularMovies,
   getMovieTrailer,
+  getTopRated,
+  getNowPlaying,
 } from "../../actions/moviedb_actions";
 
 const mapStateToProps = (state) => {
@@ -18,6 +20,8 @@ const mapDispatchToProps = () => (dispatch) => {
   return {
     getMovies: () => dispatch(getMovies()),
     getPopular: (key) => dispatch(getPopularMovies(key)),
+    getTopRated: (key) => dispatch(getTopRated(key)),
+    getNowPlaying: (key) => dispatch(getNowPlaying(key)),
     getMovieTrailer: (movieId, key) => dispatch(getMovieTrailer(movieId, key)),
   };
 };

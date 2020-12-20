@@ -3,9 +3,20 @@ import { receiveSessionError } from "./session_action";
 
 export const RECEIVE_POPULAR_MOVIES = "RECEIVE_POPULAR_MOVIES";
 export const RECEIVE_MOVIE_TRAILER = "RECEIVE_MOVIE_TRAILER";
+export const RECEIVE_TOP_RATED = "RECEIVE_TOP_RATED";
+export const RECEIVE_NOW_PLAYING = "RECEIVE_NOW_PLAYING";
 
 export const receivePopular = (movies) => ({
   type: RECEIVE_POPULAR_MOVIES,
+  movies,
+});
+export const receiveTopRated = (movies) => ({
+  type: RECEIVE_TOP_RATED,
+  movies,
+});
+
+export const receiveNowPlaying = (movies) => ({
+  type: RECEIVE_NOW_PLAYING,
   movies,
 });
 
@@ -29,6 +40,27 @@ export const getPopularMovies = (key) => (dispatch) => {
       // let newList = mergeTrailers(movies.results);
       // // debugger;
       return dispatch(receivePopular(movies.results));
+    },
+    (error) => dispatch(receiveSessionError(error.responseJSON))
+  );
+};
+
+export const getTopRated = (key) => (dispatch) => {
+  return MDB_Utils.fetchTopRated(key).then(
+    (movies) => {
+      // let newList = mergeTrailers(movies.results);
+      // // debugger;
+      return dispatch(receiveTopRated(movies.results));
+    },
+    (error) => dispatch(receiveSessionError(error.responseJSON))
+  );
+};
+export const getNowPlaying = (key) => (dispatch) => {
+  return MDB_Utils.fetchNowPlaying(key).then(
+    (movies) => {
+      // let newList = mergeTrailers(movies.results);
+      // // debugger;
+      return dispatch(receiveNowPlaying(movies.results));
     },
     (error) => dispatch(receiveSessionError(error.responseJSON))
   );
