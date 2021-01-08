@@ -55,7 +55,16 @@ const Slide = (props) => {
                     </button>
                   </Link>
 
-                  <button className="modal-add-list">
+                  <button
+                    className="modal-add-list"
+                    onClick={() => {
+                      props.createLike({
+                        movie_id: movie.id,
+                        watchlist_id: 1,
+                        user_id: props.user.id,
+                      });
+                    }}
+                  >
                     <svg viewBox="0 0 24 24">
                       <path
                         d="M13 11h8v2h-8v8h-2v-8H3v-2h8V3h2v8z"

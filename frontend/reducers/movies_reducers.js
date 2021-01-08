@@ -43,11 +43,15 @@ const moviesReducer = (state = {}, action) => {
     case RECEIVE_MOVIE:
       return { [action.movie.info.id]: action.movie.info };
     case RECEIVE_MOVIES:
-      let newState = Object.assign({}, state);
-      for (let [id, movie] of Object.entries(action.movies)) {
-        newState[movie.id] = movie;
-      }
-      return newState;
+      // let newState = Object.assign({}, state);
+      // for (let [id, movie] of Object.entries(action.movies)) {
+      //   newState[movie.id] = movie;
+      // }
+      // debugger;
+      return Object.assign({}, state, {
+        awsMovies: splitMovies(action.movies),
+      });
+    // return newState;
     default:
       return state;
   }

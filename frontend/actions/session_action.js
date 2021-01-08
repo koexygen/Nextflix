@@ -1,5 +1,6 @@
 import * as AuthUtil from "../util/auth_util";
 import * as FetchUtil from "../util/fetch_util";
+import * as Watchlist from "../util/watchlist_utils";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
@@ -8,6 +9,7 @@ export const RECEIVE_INPUT_EMAIL = "RECEIVE_EMAIL";
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
 export const RECEIVE_WATCHLIST = "RECEIVE_WATCHLIST";
+export const CREATE_LIKE = "CREATE_LIKE";
 
 export const receiveCurrentUser = (user) => ({
   type: RECEIVE_CURRENT_USER,
@@ -38,6 +40,20 @@ export const getWatchlist = () => (dispatch) => {
   return FetchUtil.getWatchlists().then(
     (movies) => {
       return dispatch(receiveWatchlist(movies));
+    },
+    (errors) => dispatch(receiveSessionError(errors.responseJSON))
+  );
+};
+
+export const sendLike = (like) => ({
+  type: CREATE_LIKE,
+  like,
+});
+
+export const createLike = (like) => (dispatch) => {
+  return Watchlist.createLike(like).then(
+    (like) => {
+      return dispatch(sendLike(like));
     },
     (errors) => dispatch(receiveSessionError(errors.responseJSON))
   );

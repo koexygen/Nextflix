@@ -1,4 +1,5 @@
 import { RECEIVE_WATCHLIST } from "../actions/session_action";
+import { CREATE_LIKE } from "../actions/session_action";
 
 const watchlistReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -10,6 +11,7 @@ const watchlistReducer = (state = {}, action) => {
         newState[movie.id] = movie;
       }
       return newState;
+
     default:
       return state;
   }

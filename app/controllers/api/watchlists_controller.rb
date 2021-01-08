@@ -1,19 +1,13 @@
 class Api::WatchlistsController < ApplicationController
-  def create
-
-  end
+  def create; end
 
   def show
     @watchlist = current_user.watchlist.movies
     render json: @watchlist
   end
 
-  def update
+  def update; end
 
-  end
-
-  def destroy
-
-  end
+  def destroy; end
 
 end

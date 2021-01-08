@@ -26,6 +26,13 @@ export default class Browse extends React.Component {
         <HeaderNavContainer />
         <BrowseBillboardContainer />
         <div className="sliders-container">
+          {this.props.movies.awsMovies ? (
+            <SliderContainer
+              movies={this.props.movies.awsMovies}
+              tmdb={false}
+              title="AWS S3 Movies, demo for watchlist"
+            />
+          ) : null}
           {this.props.movies.popularMovies ? (
             <SliderContainer
               movies={this.props.movies.popularMovies}

@@ -1,5 +1,5 @@
 import React from "react";
-import Slide from "./Slide";
+import SlideContainer from "./SlideContainer";
 
 export default class Slider extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ export default class Slider extends React.Component {
     if (this.props.movies[this.state.activeIndex]) {
       return (
         <div className="slider-container">
-          <Slide
+          <SlideContainer
             movies={this.props.movies[this.state.activeIndex]}
             tmdb={this.props.tmdb}
             prevSlide={this.goToPrevSlide}
