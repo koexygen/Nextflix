@@ -1,4 +1,3 @@
-require 'byebug'
 class Api::WatchlistsController < ApplicationController
   def create; end
 
