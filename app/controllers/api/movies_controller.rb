@@ -8,5 +8,4 @@ class Api::MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     render :show
   end
-
 end

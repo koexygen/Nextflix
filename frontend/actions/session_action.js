@@ -82,6 +82,7 @@ export const saveInputEmail = (email) => (dispatch) => {
 };
 
 export const logoutCurrentUser = () => ({ type: LOGOUT_USER });
+export const removeCurrentMovie = () => ({ type: "REMOVE_WATCHLIST" });
 
 export const receiveSessionError = (errors) => {
   return {
@@ -115,4 +116,8 @@ export const logoutUser = () => (dispatch) => {
     },
     (error) => dispatch(receiveSessionError(error.responseJSON))
   );
+};
+
+export const removeWatchlist = (moveId) => (dispatch) => {
+  return Watchlist.removeWatchlist(moveId);
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const imgBasePath = "https://image.tmdb.org/t/p/w500/";
@@ -6,7 +6,11 @@ const videoPath = "http://www.youtube.com/watch?v=";
 
 const Slide = (props) => {
   const handlePlay = (movieId) => {};
-
+  useEffect(() => {
+    // Run! Like go get some data from an API.
+    props.getWatchlist();
+  }, []);
+  let watchlist;
   return (
     <div>
       <h1>{props.title}</h1>
@@ -55,6 +59,26 @@ const Slide = (props) => {
                     </button>
                   </Link>
 
+                  <button
+                    className="modal-remove-list"
+                    onClick={() => {
+                      props.removeWatchlist({
+                        movie_id: movie.id,
+                        watchlist_id: 1,
+                        user_id: props.user.id,
+                      });
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "45px",
+                        position: "absolute",
+                        transform: "translate(-7px, -29px)",
+                      }}
+                    >
+                      -
+                    </span>
+                  </button>
                   <button
                     className="modal-add-list"
                     onClick={() => {

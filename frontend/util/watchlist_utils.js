@@ -6,3 +6,12 @@ export const createLike = (like) =>
       like,
     },
   });
+
+export const removeWatchlist = (like) =>
+  $.ajax({
+    method: "DELETE",
+    url: "/api/likes",
+    data: {
+      like,
+    },
+  });

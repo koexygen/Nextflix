@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :watchlist, only: %i[create show destroy update]
     resource :session, only: %i[create destroy]
     resources :movies, only: %i[show index]
-    resources :likes, only: %i[create]
+    resource :likes, only: %i[create destroy]
   end
 
   root to: 'root#root'

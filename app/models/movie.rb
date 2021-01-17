@@ -15,7 +15,5 @@ class Movie < ApplicationRecord
       self.video_url = self.trailer.service_url if self.trailer.attached?
   end
 
-  def watchListed
 
-  end
 end

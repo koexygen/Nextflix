@@ -8,6 +8,14 @@ class Api::LikesController < ApplicationController
     end
   end
 
+  def destroy
+    if Like.find_by(like_params).destroy
+      render json: ['deleted'], status: 200
+    else
+      render json: ['error'], status: 404
+    end
+  end
+
   private
 
   def like_params
